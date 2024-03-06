@@ -1,7 +1,7 @@
-
-version: '3.8'
+version: "3.8"
 services:
   keycloak:
+    container_name: keycloak
     image: quay.io/keycloak/keycloak:23.0.6
     command: start-dev
     environment:
@@ -29,11 +29,15 @@ services:
       - "5432:5432"
     restart: always
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -d ${POSTGRES_KEYCLOAK_DB} -U ${POSTGRES_KEYCLOAK_USER}"]
+      test:
+        [
+          "CMD-SHELL",
+          "pg_isready -d ${POSTGRES_KEYCLOAK_DB} -U ${POSTGRES_KEYCLOAK_USER}",
+        ]
       interval: 10s
       timeout: 3s
       retries: 3
     volumes:
       - keycloakpgsql-vol:/var/lib/postgresql/data
 volumes:
-    keycloakpgsql-vol:
+  keycloakpgsql-vol:
