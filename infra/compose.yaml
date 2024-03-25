@@ -13,8 +13,11 @@ services:
       - KC_DB_SCHEMA=public
       - KEYCLOAK_ADMIN=${KEYCLOAK_ADMIN}
       - KEYCLOAK_ADMIN_PASSWORD=${KEYCLOAK_ADMIN_PASSWORD}
+      - KC_THEME_FOLDER_DIR=/opt/keycloak/themes/mytheme
     ports:
       - 8080:8080
+    volumes:
+      - ./mytheme:/opt/keycloak/themes/mytheme
     depends_on:
       keycloak-pgsql:
         condition: service_healthy

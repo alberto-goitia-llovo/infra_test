@@ -1,0 +1,56 @@
+.login-pf body {
+  background: #f1f2f5;
+}
+
+.card-pf {
+  border: none;
+  border-radius: 8px;
+}
+
+.pf-c-button {
+  border-radius: 8px;
+}
+
+.pf-c-form-control {
+  border-radius: 8px;
+  border-color: #e1e3e8;
+}
+
+#kc-form-login > div:nth-child(2) > div > button {
+  margin-left: 1px;
+  --pf-c-button--after--BorderColor: transparent;
+}
+
+#kc-header {
+  text-align: center;
+}
+
+#kc-header-wrapper {
+  color: black;
+  text-transform: capitalize;
+}
+.login-pf-page .card-pf {
+  box-shadow: unset;
+}
+@media (max-width: 767px) {
+  .login-pf-page .card-pf {
+    box-shadow: unset;
+    margin: 0 10px;
+  }
+
+  #kc-header-wrapper {
+    padding: 20px 0;
+  }
+}
+
+.kc-social-item::after {
+  --pf-c-button--after--BorderColor: transparent !important;
+  border-radius: 8px !important;
+  --pf-c-button--after--BorderColor: #e1e3e8 !important;
+}
+
+.fa-google::before {
+  content: url("../img/google.svg");
+  display: block;
+  width: 80%;
+}
