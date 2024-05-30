@@ -14,13 +14,20 @@ services:
       - KEYCLOAK_ADMIN=${KEYCLOAK_ADMIN}
       - KEYCLOAK_ADMIN_PASSWORD=${KEYCLOAK_ADMIN_PASSWORD}
       - KC_THEME_FOLDER_DIR=/opt/keycloak/themes/mytheme
+      - DEBUG='true'
+      - DEBUG_PORT='*:8787'
+      - KC_FEATURES=preview
     ports:
       - 8080:8080
-    volumes:
-      - ./mytheme:/opt/keycloak/themes/mytheme
     depends_on:
       keycloak-pgsql:
         condition: service_healthy
+    volumes:
+      - ./keycloak/mytheme:/opt/keycloak/themes/mytheme
+      - ./keycloak/event-listener-spi/target/event-listener-spi.jar:/opt/keycloak/providers/event-listener-spi.jar
+      # - ./keycloak/event-listener-spi/dasniko.keycloak-event-listener.jar:/opt/keycloak/providers/keycloak-event-listener.jar
+      # - ./keycloak/event-listener-sysout/target/event-listener-sysout.jar:/opt/keycloak/providers/event-listener-sysout.jar
+
   keycloak-pgsql:
     container_name: keycloak-pgsql
     image: postgres:16.2

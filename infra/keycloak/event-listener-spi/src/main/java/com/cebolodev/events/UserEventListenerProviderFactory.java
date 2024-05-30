@@ -10,32 +10,24 @@ public class UserEventListenerProviderFactory implements EventListenerProviderFa
 
     @Override
     public EventListenerProvider create(KeycloakSession session) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'create'");
+        return new UserEventListenerProvider();
     }
 
     @Override
     public void init(Config.Scope config) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'init'");
     }
 
     @Override
     public void postInit(KeycloakSessionFactory factory) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'postInit'");
     }
 
     @Override
     public void close() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'close'");
     }
 
     @Override
     public String getId() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getId'");
+        return "event-listener-spi";
     }
 
 }

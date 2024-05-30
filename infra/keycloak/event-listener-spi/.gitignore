@@ -1,0 +1,20 @@
+# Maven build directory
+target/
+*.jar
+
+# IDE files
+.idea/
+*.iml
+
+# Compiled Java classes
+*.class
+
+# Maven wrapper
+.mvn/wrapper/
+
+# Log files
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
